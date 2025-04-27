@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
   ];
   let indice = 0;
 
-  const scriptURL = "https://script.google.com/macros/s/AKfycbyKHI1f6Lw5pqZwvx0OhJykFAq46Yl71Vkp_pp3Hn9dqy0CUny1G5w14HEGtNYfnDgh/exec";
+  const scriptURL = "https://script.google.com/macros/s/AKfycbw19ggh6Hbm_mAMrZ6X2BGXAgOHZ_bKU9UlX7KuU5GeaPx9xjChIM2PGngYGC9dPz9Q/exec";
 
   function vota(voto) {
     const tematicaCorrente = tematiche[indice];
