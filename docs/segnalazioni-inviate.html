@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Segnalazioni Inviate</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f8f9fa;
+      color: #00014c;
+    }
+    h1 {
+      text-align: center;
+      color: #cc0000;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+    }
+    th {
+      background-color: #004080;
+      color: white;
+    }
+    tr:nth-child(even) {
+      background-color: #e9ecef;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Segnalazioni Inviate</h1>
+<div id="segnalazioni"></div>
+
+<script>
+const sheetID = "ID_DEL_TUO_FOGLIO";
+const apiKey = "CHIAVE_API"; // Facoltativa se il foglio è pubblico
+
+const url = `https://opensheet.elk.sh/${sheetID}/Foglio1`;
+
+fetch(url)
+  .then(response => response.json())
+  .then(data => {
+    let html = "<table><tr><th>Tematica</th><th>Valutazione</th></tr>";
+    data.forEach(row => {
+      if (row.Tematica && row.Valutazione) {
+        html += `<tr><td>${row.Tematica}</td><td>${row.Valutazione}</td></tr>`;
+      }
+    });
+    html += "</table>";
+    document.getElementById("segnalazioni").innerHTML = html;
+  })
+  .catch(error => {
+    document.getElementById("segnalazioni").innerHTML = "<p>Errore nel caricamento delle segnalazioni.</p>";
+    console.error("Errore:", error);
+  });
+</script>
+
+</body>
+</html>
