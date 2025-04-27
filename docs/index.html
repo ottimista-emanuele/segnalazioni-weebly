@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Come vanno le cose?</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+      background-color: #f8f9fa;
+      color: #00014c;
+    }
+    .emoji-btn {
+      font-size: 50px;
+      cursor: pointer;
+      margin: 20px;
+      transition: transform 0.2s;
+    }
+    .emoji-btn:hover {
+      transform: scale(1.2);
+    }
+  </style>
+</head>
+<body>
+
+<h2 id="titolo-citta">CITTÀ DI NAPOLI</h2>
+<div class="spazio"></div>
+<h3 class="sottotitolo">Secondo te<br>Come vanno le cose?</h3>
+<div class="spazio"></div>
+<h2 id="tematica"><strong>Servizi per i Giovani</strong></h2>
+<div class="grande-spazio"></div>
+
+<div id="emoji-container">
+  <span class="emoji-btn" id="btn1">😡</span>
+  <span class="emoji-btn" id="btn2">😐</span>
+  <span class="emoji-btn" id="btn3">😊</span>
+</div>
+
+<div id="fine" style="display:none">
+  <h3 class="finale-rosso">Grazie per le tue segnalazioni!</h3>
+  <p class="aggiunta-grande">Hai qualcosa da aggiungere?</p>
+  <textarea id="extra"></textarea><br>
+  <button onclick="inviaExtra()">INVIA</button>
+  <div class="aggiunta-grande-salta" onclick="saltaExtra()">Non ho nulla da aggiungere</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/ottimista-emanuele/segnalazioni-weebly/segnalazioni-napoli.js"></script>
+
+</body>
+</html>
